@@ -40,3 +40,4 @@ django-admin.py makemessages --no-obsolete ... # This is a must before the check
 ./manage.py check_po_files -v0 -s 'key to skip' -s 'another key to skip'
 ```
 
+test it: nosetests --where=./src/
