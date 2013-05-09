@@ -16,5 +16,6 @@ setup(
     requires=[
         'polib',
         'mock',
+        'nose',
     ]
 )
