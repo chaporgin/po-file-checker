@@ -1,7 +1,8 @@
+#!/usr/bin/env python
 # coding: utf-8
 
 import sys
-from .base import check_files
+from po_file_checker.base import check_files
 
 if __name__ == 'main':
     missing = tuple(check_files(sys.argv))
