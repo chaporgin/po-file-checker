@@ -7,7 +7,7 @@ from optparse import make_option
 from django.conf import settings
 from django.core.management.base import BaseCommand
 
-from po_checker.base import check_files
+from po_file_checker.base import check_files
 
 Domain = namedtuple('domain', ['name', 'must_exist'])
 DOMAINS = (
