@@ -4,8 +4,8 @@
 import sys
 from po_file_checker.base import check_files
 
-if __name__ == 'main':
-    missing = tuple(check_files(sys.argv))
+if __name__ == '__main__':
+    missing = tuple(check_files(sys.argv[1:]))
     if missing:
         sys.stderr.write(
             "\n".join(missing)
