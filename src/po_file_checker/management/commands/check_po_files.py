@@ -69,7 +69,7 @@ class Command(BaseCommand):
                                 pofile
                             )
                         )
-                        sys.exit(FILE_DOES_NOT_EXIST)
+                        sys.exit(ERROR_FILE_DOES_NOT_EXIST)
 
                     else:
                         continue
