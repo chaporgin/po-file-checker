@@ -12,6 +12,8 @@ def entries_with_missing_translations(po):
     """
     for entry in po:
         if not entry.translated():
+            if not entry.occurrences:
+                continue
             if not entry.msgstr and entry.msgstr_plural:
                 # У некоторых записей есть msgstr_plural, но нет msgstr.
                 # Их считаем переведенными, если они не obsolete и не fuzzy!
