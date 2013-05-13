@@ -63,17 +63,13 @@ class Command(BaseCommand):
                 if verbosity > 0:
                     print 'processing file "{0}"'.format(pofile)
 
-                if domain.must_exist:
-                    if not os.path.exists(pofile):
-                        sys.stderr.writelines(
-                            'pofile is obligatory and does not exist: "{0}"'.format(
-                                pofile
-                            )
+                if domain.must_exist and not os.path.exists(pofile):
+                    sys.stderr.writelines(
+                        'pofile is obligatory and does not exist: "{0}"'.format(
+                            pofile
                         )
-                        sys.exit(ERROR_FILE_DOES_NOT_EXIST)
-
-                    else:
-                        continue
+                    )
+                    sys.exit(ERROR_FILE_DOES_NOT_EXIST)
 
                 filenames.append(pofile)
 
