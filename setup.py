@@ -13,7 +13,7 @@ setup(
     keywords="po-file, build-tools, sanity check",
     package_dir={'': PACKAGE_ROOT},
     packages=find_packages(PACKAGE_ROOT, exclude=['tests']),
-    requires=[
+    install_requires=[
         'polib',
         'mock',
         'nose',
