@@ -41,7 +41,8 @@ class Command(BaseCommand):
         ))
 
         if missing:
-            print "\n".join(missing)
+            for key in missing:
+                print 'The key is not fully translated: "%s"' % key
             sys.exit(ERROR_MISSING_FILES)
 
     def generate_filenames(self, verbosity):
