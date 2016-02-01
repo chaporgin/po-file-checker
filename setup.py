@@ -7,7 +7,7 @@ PACKAGE_NAME = 'po_file_checker'
 
 setup(
     name=PACKAGE_NAME,
-    version='0.0',
+    version='0.1',
     description='Check that po-files have no untranslated keys',
     author_email='chapson@yandex-team.ru',
     keywords="po-file, build-tools, sanity check",
