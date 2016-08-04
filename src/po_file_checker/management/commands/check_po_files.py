@@ -22,6 +22,9 @@ ERROR_FILE_DOES_NOT_EXIST = 2
 
 class Command(BaseCommand):
     help = "Check all po-files in project"
+    # For Django >= 1.7
+    requires_system_checks = False
+    # For Django < 1.7
     requires_model_validation = False
 
     option_list = BaseCommand.option_list + (
