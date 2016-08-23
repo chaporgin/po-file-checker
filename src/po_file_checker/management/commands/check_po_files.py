@@ -3,7 +3,7 @@
 import os
 import sys
 from collections import namedtuple
-from optparse import make_option
+
 from django.conf import settings
 from django.core.management.base import BaseCommand
 
@@ -22,18 +22,12 @@ ERROR_FILE_DOES_NOT_EXIST = 2
 
 class Command(BaseCommand):
     help = "Check all po-files in project"
-    # For Django >= 1.7
-    requires_system_checks = False
-    # For Django < 1.7
-    requires_model_validation = False
 
-    option_list = BaseCommand.option_list + (
-        make_option(
-            '--skip', '-s',
-            action='append',
-            dest='skip',
-            help='Don\'t check the key (may be applied multiple times)'),
-    )
+    requires_system_checks = False
+
+    def add_arguments(self, parser):
+        parser.add_argument('--skip', '-s', action='append', dest='skip',
+                            help='Don\'t check the key (may be applied multiple times)')
 
     def handle(self, *args, **options):
         verbosity = int(options['verbosity'])
