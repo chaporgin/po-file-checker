@@ -69,6 +69,7 @@ class Command(BaseCommand):
                     )
                     sys.exit(ERROR_FILE_DOES_NOT_EXIST)
 
-                filenames.append(pofile)
+                if os.path.exists(pofile):
+                    filenames.append(pofile)
 
         return filenames
